@@ -13,6 +13,8 @@ class AddDoctorinfo extends Component {
       email: "",
       qualification: "",
       specialization: "",
+      timeslotAM: "",
+      timeslotPM: "",
       fees: "",
       message: null,
     };
@@ -39,6 +41,8 @@ class AddDoctorinfo extends Component {
       this.state.email === "" ||
       this.state.qualification === "" ||
       this.state.specialization === "" ||
+      this.state.timeslotAM === "" ||
+      this.state.timeslotPM === "" ||
       this.state.fees === ""
     ) {
       Swal.fire({
@@ -54,6 +58,8 @@ class AddDoctorinfo extends Component {
       email: this.state.email,
       qualification: this.state.qualification,
       specialization: this.state.specialization,
+      timeslotAM: this.state.timeslotAM,
+      timeslotPM: this.state.timeslotPM,
       fees: this.state.fees,
     };
 
@@ -156,6 +162,8 @@ class AddDoctorinfo extends Component {
                 />
               </div>
             </div>
+
+
             <div className="form-group row my-3 justify-content-center">
               <label htmlFor="specialization" className="col-2 col-form-label">
                 Specilization
@@ -173,25 +181,43 @@ class AddDoctorinfo extends Component {
                 />
               </div>
             </div>
+
+
+
             <div className="form-group row my-3 justify-content-center">
-              <label htmlFor="specialization" className="col-2 col-form-label">
+              <label htmlFor="timeslot" className="col-2 col-form-label">
                 Time-Slot
               </label>
-              <div className="col-5">
+              <div className="col-5 " style={{ display: "flex", justifyContent: "space-between" }}>
                 <input
-                  type="number"
-                  id="fees"
-                  className="form-control"
-                  placeholder="fees"
-                  name="fees"
-                  value={this.state.fees}
+                  type="text"
+                  id="timeslotAM"
+                  className="form-control "
+                  placeholder="AM"
+                  name="timeslotAM"
+                  value={this.state.timeslotAM}
                   onChange={this.onChange}
                   required
                 />
-              </div>
+                 To
+                <input
+                  type="text"
+                  id="timeslotPM"
+                  className="form-control"
+                  placeholder="PM"
+                  name="timeslotPM"
+                  value={this.state.timeslotPM}
+                  onChange={this.onChange}
+                  required
+                />
+                </div>
+                
+               
+                
+                
             </div>
             <div className="form-group row my-3 justify-content-center">
-              <label htmlFor="specialization" className="col-2 col-form-label">
+              <label htmlFor="fees" className="col-2 col-form-label">
                 Fees
               </label>
               <div className="col-5">

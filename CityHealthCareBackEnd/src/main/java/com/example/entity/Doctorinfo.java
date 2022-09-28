@@ -28,6 +28,8 @@ public class Doctorinfo implements Serializable{
 	private String email;
 	private String qualification;
 	private String specialization;
+	private String timeslotAM;
+	private String timeslotPM;
 	private float fees;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -38,7 +40,7 @@ public class Doctorinfo implements Serializable{
 	
 	public Doctorinfo() {}
 	
-	public Doctorinfo(int doctorid, String name, String email, String qualification, String specialization,float fees,
+	public Doctorinfo(int doctorid, String name, String email, String qualification, String specialization,String timeslotAM,String timeslotPM,float fees,
 			Hospital hospital) {
 		super();
 		this.doctorid = doctorid;
@@ -46,17 +48,21 @@ public class Doctorinfo implements Serializable{
 		this.email = email;
 		this.qualification = qualification;
 		this.specialization = specialization;
+		this.timeslotAM = timeslotAM;
+		this.timeslotPM = timeslotPM;
 		this.fees = fees;
 		this.hospital = hospital;
 	}
 
-	public Doctorinfo( String name, String email, String qualification, String specialization,float fees,
+	public Doctorinfo( String name, String email, String qualification, String specialization,String timeslotAM,String timeslotPM,float fees,
 			Hospital hospital) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.qualification = qualification;
 		this.specialization = specialization;
+		this.timeslotAM = timeslotAM;
+		this.timeslotPM = timeslotPM;
 		this.fees = fees;
 		this.hospital = hospital;
 	}
@@ -103,6 +109,22 @@ public class Doctorinfo implements Serializable{
 		this.specialization = specialization;
 	}
 	
+	public String getTimeslotAM() {
+		return timeslotAM;
+	}
+
+	public void setTimeslotAM(String timeslotAM) {
+		this.timeslotAM = timeslotAM;
+	}
+	
+	public String getTimeslotPM() {
+		return timeslotPM;
+	}
+
+	public void setTimeslotPM(String timeslotPM) {
+		this.timeslotPM = timeslotPM;
+	}
+	
 	public float getFees() {
 		return fees;
 	}
@@ -122,7 +144,7 @@ public class Doctorinfo implements Serializable{
 	@Override
 	public String toString() {
 		return "Doctorinfo [doctorid=" + doctorid + ", name=" + name + ", email=" + email + ", qualification="
-				+ qualification + ", specialization=" + specialization +", fees=" + fees + "]";
+				+ qualification + ", specialization=" + specialization +",timeslotAM=\" + timeslotAM +\",timeslotPM=\\\" + timeslotPM +\\\", fees=" + fees + "]";
 	}
 	
 	

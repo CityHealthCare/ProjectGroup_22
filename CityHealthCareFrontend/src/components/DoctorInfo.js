@@ -108,7 +108,9 @@ export default class DoctorInfo extends Component {
                   <th>Email</th>
                   <th>Qualification</th>
                   <th>Specilization</th>
+                  <th>TimeSlot</th>
                   <th>Fees</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -119,7 +121,14 @@ export default class DoctorInfo extends Component {
                     <td>{doctor.email}</td>
                     <td>{doctor.qualification}</td>
                     <td>{doctor.specialization}</td>
+                    <td>{doctor.timeslotAM}<b className="text-success">AM</b>   <b>-</b>   {doctor.timeslotPM}<b className="text-danger">PM</b></td>
                     <td> Rs. {doctor.fees} /-</td>
+                    <td><Button
+                  className="btn btn-success "
+                  onClick={this.saveBlood}
+                >
+                  Book
+                </Button></td>
                   </tr>
                 ))}
               </tbody>
