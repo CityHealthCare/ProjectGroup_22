@@ -175,6 +175,23 @@ class AddDoctorinfo extends Component {
             </div>
             <div className="form-group row my-3 justify-content-center">
               <label htmlFor="specialization" className="col-2 col-form-label">
+                Time-Slot
+              </label>
+              <div className="col-5">
+                <input
+                  type="number"
+                  id="fees"
+                  className="form-control"
+                  placeholder="fees"
+                  name="fees"
+                  value={this.state.fees}
+                  onChange={this.onChange}
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-group row my-3 justify-content-center">
+              <label htmlFor="specialization" className="col-2 col-form-label">
                 Fees
               </label>
               <div className="col-5">
