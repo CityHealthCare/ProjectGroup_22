@@ -23,6 +23,8 @@ import Oxygenavailability from "./components/Oxygenavailability";
 import Bookingstatus from "./components/Bookingstatus";
 import DoctorInfo from "./components/DoctorInfo";
 import AmbulanceContact from "./components/AmbulanceContact";
+import Addservices from "./components/Addservices";
+import Viewservices from "./components/Viewservices";
 
 import BedList from "./components/BedList";
 import BloodList from "./components/BloodList";
@@ -77,6 +79,9 @@ function App() {
 
         <Route exact path="/userdashboard" element={<UserDashBoard />}></Route>
         <Route exact path="/userbedbook" element={<Userbedbook />}></Route>
+
+        <Route exact path="/addservices" element={<Addservices />}></Route>
+        <Route exact path="/viewservices" element={<Viewservices />}></Route>
         <Route
           exact
           path="/bedavailability"

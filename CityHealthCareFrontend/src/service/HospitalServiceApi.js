@@ -16,6 +16,11 @@ class HospitalServiceApi {
     return axios.put(HOSPITAL_API_BASE_URL + "/addblood/" + id, hospital);
   }
 
+  addServices(hospitalServices) {
+    console.log( hospitalServices);
+    return axios.post(HOSPITAL_API_BASE_URL + "/addhospitalservices", hospitalServices);
+  }
+
   addOxygen(id, hospital) {
     console.log(id + " " + hospital);
     return axios.put(HOSPITAL_API_BASE_URL + "/addoxygen/" + id, hospital);
@@ -36,6 +41,11 @@ class HospitalServiceApi {
 
   getByHospname(hosname) {
     return axios.get(HOSPITAL_API_BASE_URL + "/viewblood/" + hosname);
+  }
+
+  getServicesByHospId(id) {
+    console.log(id )
+    return axios.get(HOSPITAL_API_BASE_URL + "/services/" + id);
   }
 
   logoutHospital() {

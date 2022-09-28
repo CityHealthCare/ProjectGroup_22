@@ -61,6 +61,16 @@ class HospitalDashboard extends Component {
   approverejectequest() {
     window.location = "/approverejectrequest";
   }
+
+
+  viewservices() {
+    window.location = "/viewservices";
+  }
+  addservices() {
+    window.location = "/addservices";
+  }
+
+
   render() {
     let { hospitalId, Name } = this.state;
     return (
@@ -175,6 +185,8 @@ class HospitalDashboard extends Component {
             </div>
           </div>
         </div>
+
+
         <div className="row my-3 justify-content-center">
           <div className="col-sm-4">
             <div
@@ -201,7 +213,7 @@ class HospitalDashboard extends Component {
               <div className="card-body">
                 <h5 className="card-title">View DoctorInfo List</h5>
                 <p className="card-text">
-                  View details of all Blood in hospitals.
+                  View details of all Doctor in hospitals.
                 </p>
                 <Button
                   className="btn btn-primary"
@@ -213,6 +225,49 @@ class HospitalDashboard extends Component {
             </div>
           </div>
         </div>
+
+
+
+
+<div className="row my-3 justify-content-center">
+          <div className="col-sm-4">
+            <div
+              className="card"
+              style={{ backgroundColor: "rgba(255,255,255,0.6)" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">Add Services</h5>
+                <p className="card-text">Add Services details of hospitals.</p>
+                <Button
+                  className="btn btn-success"
+                  onClick={this.addservices}
+                >
+                  ADD
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div
+              className="card"
+              style={{ backgroundColor: "rgba(255,255,255,0.6)" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">View Services List</h5>
+                <p className="card-text">
+                  View details of all Services in hospitals.
+                </p>
+                <Button
+                  className="btn btn-primary"
+                  onClick={this.viewservices}
+                >
+                  View
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="row mt-3 mb-5 justify-content-center">
           <div className="col-sm-4">
             <div
