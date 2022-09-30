@@ -136,15 +136,16 @@ export default class Bloodavailability extends Component {
               </thead>
               <tbody>
                 <tr>
-                <td>{this.state.hospitalname}</td>
-                  <td>{this.state.a_pos} Unit</td>
-                  <td>{this.state.a_neg} Unit</td>
-                  <td>{this.state.b_pos} Unit</td>
-                  <td>{this.state.b_neg} Unit</td>
-                  <td>{this.state.ab_pos} Unit</td>
-                  <td>{this.state.ab_neg} Unit</td>
-                  <td>{this.state.o_pos} Unit</td>
-                  <td>{this.state.o_neg} Unit</td>
+                
+                  <td>{this.state.hospitalname}</td>
+                  <td>{this.state.a_pos}</td>
+                  <td>{this.state.a_neg}</td>
+                  <td>{this.state.b_pos}</td>
+                  <td>{this.state.b_neg}</td>
+                  <td>{this.state.ab_pos}</td>
+                  <td>{this.state.ab_neg}</td>
+                  <td>{this.state.o_pos}</td>
+                  <td>{this.state.o_neg}</td>
                 </tr>
               </tbody>
             </table>

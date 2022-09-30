@@ -15,6 +15,7 @@ export default class DoctorInfo extends Component {
 
     this.search = this.search.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.gotodoctorbook = this.gotodoctorbook.bind(this);
   }
 
   search = (e) => {
@@ -49,6 +50,19 @@ export default class DoctorInfo extends Component {
   }
   removeWarnings() {
     document.getElementById("searchVl").innerHTML = "";
+  }
+
+  gotodoctorbook() {
+    if (this.state.ventilator === "") {
+      Swal.fire({
+        title: "Warning",
+        text: "Please Enter the Hospital Name",
+        icon: "warning",
+        confirmButtonText: "Ok",
+      });
+      return false;
+    }
+    window.location = "/userdoctorbook";
   }
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -125,7 +139,7 @@ export default class DoctorInfo extends Component {
                     <td> Rs. {doctor.fees} /-</td>
                     <td><Button
                   className="btn btn-success "
-                  onClick={this.saveBlood}
+                  onClick={this.gotodoctorbook}
                 >
                   Book
                 </Button></td>

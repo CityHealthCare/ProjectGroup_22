@@ -26,6 +26,7 @@ import AmbulanceContact from "./components/AmbulanceContact";
 import Addservices from "./components/Addservices";
 import Viewservices from "./components/Viewservices";
 
+import UserDoctorBook from "./components/UserDoctorBook";
 import BedList from "./components/BedList";
 import BloodList from "./components/BloodList";
 import OxygenList from "./components/OxygenList";
@@ -80,6 +81,7 @@ function App() {
         <Route exact path="/userdashboard" element={<UserDashBoard />}></Route>
         <Route exact path="/userbedbook" element={<Userbedbook />}></Route>
 
+        <Route exact path="/userdoctorbook" element={<UserDoctorBook />}></Route>
         <Route exact path="/addservices" element={<Addservices />}></Route>
         <Route exact path="/viewservices" element={<Viewservices />}></Route>
         <Route

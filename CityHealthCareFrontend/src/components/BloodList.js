@@ -40,7 +40,7 @@ class BloodList extends Component {
         ab_neg: hospital.ab_neg,
         o_pos: hospital.o_pos,
         o_neg: hospital.o_neg,
-        message: "Hospitals list rendered successfully",
+        message: "Blood list rendered successfully",
       });
       console.log(resp.data);
       console.log(this.state.message);
