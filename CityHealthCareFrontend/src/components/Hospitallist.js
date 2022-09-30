@@ -56,6 +56,7 @@ class Hospitallist extends Component {
                     <th>Email</th>
                     <th>Contact</th>
                     <th>AmbulanceContact</th>
+                    <th>Locality</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -67,6 +68,7 @@ class Hospitallist extends Component {
                       <td>{hospital.email}</td>
                       <td>{hospital.contact}</td>
                       <td>{hospital.ambulancecontact}</td>
+                      <td>{hospital.locality}</td>
                     </tr>
                   ))}
                 </tbody>

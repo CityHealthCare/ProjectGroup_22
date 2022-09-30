@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
 import HospitalServiceApi from "../service/HospitalServiceApi.js";
-
+var i;
 export default class Viewservices extends Component {
   constructor(props) {
     super(props);
@@ -26,8 +26,16 @@ export default class Viewservices extends Component {
 
     this.search = this.search.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.loadhospital = this.loadhospital.bind(this);
   }
-
+  componentDidMount() {
+    this.loadhospital();
+  }
+  loadhospital() {
+    let hosp = JSON.parse(sessionStorage.getItem("hospital"));
+    console.log(hosp.id);
+    i = hosp.id;
+  }
   search = (e) => {
     if (this.state.hospitalname === "") {
       Swal.fire({
@@ -40,7 +48,7 @@ export default class Viewservices extends Component {
     }
     e.preventDefault();
 
-    HospitalServiceApi.getByHospname(this.state.hospitalname).then(
+    HospitalServiceApi.getServicesByHospId(i).then(
       (response) => {
         console.log(this.state.hospitalname);
         let hospital = response.data;

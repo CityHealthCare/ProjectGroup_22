@@ -13,6 +13,7 @@ class AddHospital extends Component {
       contact: "",
       address: "",
       ambulancecontact: "",
+      locality: "",
       message: null,
     };
     this.addHospital = this.addHospital.bind(this);
@@ -89,6 +90,7 @@ class AddHospital extends Component {
       this.state.password === "" ||
       this.state.contact === "" ||
       this.state.address === "" ||
+      this.state.locality === "" ||
       this.state.ambulancecontact === ""
     ) {
       Swal.fire({
@@ -143,6 +145,7 @@ class AddHospital extends Component {
       password: this.state.password,
       contact: this.state.contact,
       address: this.state.address,
+      locality: this.state.locality,
       ambulancecontact: this.state.ambulancecontact,
     };
     AdminServiceApi.addHospital(hospital)
@@ -256,6 +259,25 @@ class AddHospital extends Component {
                   value={this.state.address}
                   onChange={this.onChange}
                   onBlur={this.validateAddress}
+                  onFocus={this.removeWarnings}
+                  required
+                />
+                <span style={{ color: "red" }} id="addressVr"></span>
+              </div>
+            </div>
+            <div className="form-group row my-3 justify-content-center">
+              <label htmlFor="locality" className="col-2 col-form-label">
+                Locality
+              </label>
+              <div className="col-5">
+                <input
+                  type="text"
+                  id="locality"
+                  className="form-control"
+                  placeholder="Locality"
+                  name="locality"
+                  value={this.state.locality}
+                  onChange={this.onChange}
                   onFocus={this.removeWarnings}
                   required
                 />

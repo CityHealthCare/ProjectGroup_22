@@ -54,10 +54,10 @@ class Login extends Component {
         }
       })
       .catch((error) => {
-        console.error("in err ", error.response.data);
-
+        console.error("in err ", error.response.data.message);
+        var x=error.response.data.message;
         Swal.fire({
-          title: this.state.message,
+          title:x,
           icon: "error",
           confirmButtonText: "Ok",
         });

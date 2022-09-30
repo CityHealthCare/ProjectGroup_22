@@ -42,29 +42,7 @@ class Addservices extends Component {
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   saveservices = (e) => {
-    if (
-       this.state.iCU === "" ||
-       this.state.cTScan === "" ||
-       this.state.xRAY === "" ||
-       this.state.mRI === "" ||
-       this.state.bloodTest=== "" ||
-       this.state.urinTest=== "" ||
-       this.state.sergery=== "" ||
-       this.state.pharmacy=== "" ||
-       this.state.diagnosis=== "" ||
-       this.state.ultraSound=== "" ||
-       this.state.maternity=== "" ||
-       this.state.sonography=== "" ||
-       this.state.emergency=== "" 
-    ) {
-      Swal.fire({
-        title: "All Fields are Mandatory",
-        icon: "warning",
-        confirmButtonText: "Ok",
-      });
-      return false;
-    }
-
+    
     e.preventDefault();
     let hospitalServices = {
         iCU:this.state.iCU,

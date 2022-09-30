@@ -42,7 +42,9 @@ class HospitalServiceApi {
   getByHospname(hosname) {
     return axios.get(HOSPITAL_API_BASE_URL + "/viewblood/" + hosname);
   }
-
+  getByHosplocality(hosname) {
+    return axios.get(HOSPITAL_API_BASE_URL + "/hosplocality/" + hosname);
+  }
   getServicesByHospId(id) {
     console.log(id )
     return axios.get(HOSPITAL_API_BASE_URL + "/services/" + id);

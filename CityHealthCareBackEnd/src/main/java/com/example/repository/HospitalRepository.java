@@ -40,4 +40,7 @@ public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 	List<Object[]> findOxygenByHospitalname(String hosname);
 	
 	Hospital findByHospitalname(String hosname);
+
+	@Query(value="select * from Hospital h where h.locality=:locaity",nativeQuery=true)
+	List<Hospital> findbylocality(String locaity);
 }
