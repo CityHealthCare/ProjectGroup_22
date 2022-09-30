@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.example.entity.Doctorinfo;
 import com.example.entity.Hospital;
 
 @Repository
@@ -43,4 +44,5 @@ public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 
 	@Query(value="select * from Hospital h where h.locality=:locaity",nativeQuery=true)
 	List<Hospital> findbylocality(String locaity);
+
 }

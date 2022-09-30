@@ -37,6 +37,7 @@ public interface HospitalServiceIntf {
 
 	List<Hospital> getHospitalBylocality(String locaity);
 
+
 	
 	
 }

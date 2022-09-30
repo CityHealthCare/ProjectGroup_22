@@ -263,6 +263,8 @@ public class HospitalServiceImpl implements HospitalServiceIntf {
 
 	}
 
+	
+
 	/*
 	 * @Override public Bed updateBed(Bed bed) { Bed b =
 	 * bedRepository.findById(bed.getBedid()).get(); b.setNormal(bed.getNormal());

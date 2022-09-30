@@ -9,5 +9,9 @@ public interface DoctorinfoServiceInft {
 	List<Doctorinfo> getAllDoctorinfos(int hospid);
 	
 	List<Doctorinfo> getAllDoctorinfosByName(String hosname);
+
+	Doctorinfo getdocname(String docname);
+
+
 	
 }

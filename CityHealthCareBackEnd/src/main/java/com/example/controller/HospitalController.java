@@ -65,6 +65,11 @@ public class HospitalController {
 	private Hospital getAllBlood(@PathVariable String hosname) {
 		return hospitalService.getBloodByHospitalname(hosname);
 	}
+	
+	@GetMapping("/viewdoc/{docname}")
+	private Doctorinfo getdoc(@PathVariable String docname) {
+		return doctorinfoService.getdocname(docname);
+	}
 
 	@GetMapping("/viewoxygen/{hosname}")
 	private Hospital getAllOxygen(@PathVariable String hosname) {

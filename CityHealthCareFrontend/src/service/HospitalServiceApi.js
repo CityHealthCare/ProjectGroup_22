@@ -42,6 +42,10 @@ class HospitalServiceApi {
   getByHospname(hosname) {
     return axios.get(HOSPITAL_API_BASE_URL + "/viewblood/" + hosname);
   }
+  getdocbyname(docname) {
+    return axios.get(HOSPITAL_API_BASE_URL + "/viewdoc/" + docname);
+  }
+
   getByHosplocality(hosname) {
     return axios.get(HOSPITAL_API_BASE_URL + "/hosplocality/" + hosname);
   }
@@ -49,6 +53,9 @@ class HospitalServiceApi {
     console.log(id )
     return axios.get(HOSPITAL_API_BASE_URL + "/services/" + id);
   }
+
+ 
+  
 
   logoutHospital() {
     sessionStorage.removeItem("hospital");

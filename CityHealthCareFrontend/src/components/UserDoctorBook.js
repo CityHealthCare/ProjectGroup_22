@@ -2,18 +2,19 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
 
-import RequestServiceApi from "../service/RequestServiceApi.js";
+import AppointmentServiceApi from "../service/AppointmentServiceApi";
 
 var i = 0;
 var j = 0;
+var k = 0;
 export default class Userbedbook extends Component {
   constructor(props) {
     super(props);
     this.i = 0;
 
     this.state = {
-      PatientName: "",
-      symptoms: "",
+      patientName: "",
+      symptom: "",
       
       status: "",
       message: null,
@@ -28,12 +29,13 @@ export default class Userbedbook extends Component {
 
   loadUser() {
     let user = JSON.parse(sessionStorage.getItem("user"));
-    console.log(user.id);
+    console.log("User id "+user.id);
     i = user.id;
-    let id = JSON.parse(sessionStorage.getItem("id"));
-    console.log("hospid" + id);
-    console.log(typeof id);
+    let id = JSON.parse(sessionStorage.getItem("hospid1"));
+    console.log("hosp id " + id);
     j = id;
+    k = JSON.parse(sessionStorage.getItem("docid"));
+    console.log("Doc id " + k);
   }
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -54,8 +56,8 @@ export default class Userbedbook extends Component {
     e.preventDefault();
     
     let request = {
-      PatientName: this.state.PatientName,
-      symptoms: this.state.symptoms,
+      patientName: this.state.patientName,
+      symptom: this.state.symptom,
       date: (new Date()).toString(),
       status: "pending",
     };
@@ -64,7 +66,7 @@ export default class Userbedbook extends Component {
 
     console.log(request);
 
-    RequestServiceApi.addRequest(i, j, request).then((res) => {
+    AppointmentServiceApi.addAppointment(i,j,k,request).then((res) => {
       this.setState({ message: "Request send successfully." });
       console.log(this.state.message);
       Swal.fire({
@@ -76,7 +78,7 @@ export default class Userbedbook extends Component {
     });
   };
   goback() {
-    window.location = "/userdashboard";
+    window.location = "/doctorinfo";
   }
   render() {
     return (
@@ -100,34 +102,34 @@ export default class Userbedbook extends Component {
 
         <form className="mb-5">
           <div className="form-group row my-3 justify-content-center">
-            <label for="PatientName" className="col-2 col-form-label">
+            <label for="patientName" className="col-2 col-form-label">
               Patient Name
             </label>
             <div className="col-5">
             <input
                 type="text"
-                id="PatientName"
+                id="patientName"
                 className="form-control"
-                placeholder="PatientName"
-                name="PatientName"
-                value={this.state.PatientName}
+                placeholder="Patient Name"
+                name="patientName"
+                value={this.state.patientName}
                 onChange={this.onChange}
                 required
               />
             </div>
           </div>
           <div className="form-group row my-3 justify-content-center">
-            <label htmlFor="symptoms" className="col-2 col-form-label">
+            <label htmlFor="symptom" className="col-2 col-form-label">
               Symtomps
             </label>
             <div className="col-5">
               <input
                 type="text"
-                id="symptoms"
+                id="symptom"
                 className="form-control"
                 placeholder="Symptoms"
-                name="symptoms"
-                value={this.state.symptoms}
+                name="symptom"
+                value={this.state.symptom}
                 onChange={this.onChange}
                 required
               />

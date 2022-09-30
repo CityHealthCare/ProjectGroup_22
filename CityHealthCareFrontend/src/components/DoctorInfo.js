@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
-import UserServiceApi from "../service/UserServiceApi.js";
+import AppointmentServiceApi from "../service/AppointmentServiceApi";
+import UserServiceApi from "../service/UserServiceApi";
+import HospitalServiceApi from "../service/HospitalServiceApi";
 
+var docid;
+var id1;
 export default class DoctorInfo extends Component {
   constructor(props) {
     super(props);
@@ -29,15 +33,26 @@ export default class DoctorInfo extends Component {
       return false;
     }
     e.preventDefault();
-
     UserServiceApi.getByHospname(this.state.hospitalname).then((response) => {
-      console.log(this.state.hospitalname);
+
+      let hospital = response.data;
       this.setState({
         doctors: response.data,
         message: "Doctors list rendered successfully",
       });
-      console.log(response.data);
     });
+
+    HospitalServiceApi.getByHospname(this.state.hospitalname).then(
+      (response) => {
+        console.log(this.state.hospitalname);
+        let hospital1 = response.data;
+        id1 = hospital1.hospid;
+        sessionStorage.setItem("hospid1",id1);
+        sessionStorage.setItem("docid",docid);
+        console.log(id1);
+        console.log(docid);
+      }
+    );
   };
 
   validateinput() {
@@ -60,6 +75,8 @@ export default class DoctorInfo extends Component {
         icon: "warning",
         confirmButtonText: "Ok",
       });
+      const docid=this.doctors.map((doctor)=>doctor.doctorid);
+      console.log(docid);
       return false;
     }
     window.location = "/userdoctorbook";
@@ -117,7 +134,7 @@ export default class DoctorInfo extends Component {
             <table className="table table-bordered">
               <thead className="bg-primary text-light">
                 <tr>
-                  <th className="visually-hidden">Id</th>
+                  <th className="">Id</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Qualification</th>
@@ -130,7 +147,7 @@ export default class DoctorInfo extends Component {
               <tbody>
                 {this.state.doctors.map((doctor) => (
                   <tr key={doctor.doctorid}>
-                    <td className="visually-hidden">{doctor.doctorid}</td>
+                    <td className="">{docid=doctor.doctorid}</td>
                     <td>{doctor.name}</td>
                     <td>{doctor.email}</td>
                     <td>{doctor.qualification}</td>

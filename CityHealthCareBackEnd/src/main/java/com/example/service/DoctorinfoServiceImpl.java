@@ -30,4 +30,10 @@ public class DoctorinfoServiceImpl implements DoctorinfoServiceInft{
 		return doctorinfoRepository.findByHospital(hospital);
 	}
 
+	@Override
+	public Doctorinfo getdocname(String docname) {
+		// TODO Auto-generated method stub
+		return doctorinfoRepository.findByName(docname);
+	}
+
 }

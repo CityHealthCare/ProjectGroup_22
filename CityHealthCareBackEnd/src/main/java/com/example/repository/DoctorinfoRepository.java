@@ -13,4 +13,6 @@ public interface DoctorinfoRepository extends JpaRepository<Doctorinfo, Integer>
 	
 	List<Doctorinfo> findByHospital(Hospital hospital);
 
+	Doctorinfo findByName(String docname);
+
 }
