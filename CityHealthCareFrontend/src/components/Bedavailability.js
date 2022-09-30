@@ -33,7 +33,7 @@ export default class Bedavailability extends Component {
     }
     e.preventDefault();
 
-    HospitalServiceApi.getByHospname(this.state.hospitalname).then(
+    HospitalServiceApi.getByHosplocality(this.state.hospitalname).then(
       (response) => {
         console.log(this.state.hospitalname);
         let hospital = response.data;

@@ -251,6 +251,18 @@ public class HospitalServiceImpl implements HospitalServiceIntf {
 		return hospitalServicesRepository.findByHospid(gethid);
 	}
 
+	@Override
+	public void deleteHospital(int id) {
+		
+		hospitalRepository.deleteById(id);
+	}
+
+	@Override
+	public List<Hospital> getHospitalBylocality(String locality) {
+		return hospitalRepository.findbylocality(locality);
+
+	}
+
 	/*
 	 * @Override public Bed updateBed(Bed bed) { Bed b =
 	 * bedRepository.findById(bed.getBedid()).get(); b.setNormal(bed.getNormal());

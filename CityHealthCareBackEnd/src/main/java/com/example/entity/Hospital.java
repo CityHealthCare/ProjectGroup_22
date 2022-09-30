@@ -18,16 +18,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "hospital")
 public class Hospital implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int hospid;
 	private String hospitalname;
 	private String address;
+	private String locality;
 	private String email;
 	private String password;
 	private String contact;
@@ -59,13 +57,17 @@ public class Hospital implements Serializable{
 	
 	public Hospital() {}
 
-	public Hospital(int hospid, String hospitalname, String address, String email, String password, String contact,
-			String ambulancecontact, int ventilator, int oxygen, int normal, int a_pos, int a_neg, int b_pos, int b_neg,
-			int ab_pos, int ab_neg, int o_pos, int o_neg, int oxygenavailable) {
+	
+
+	public Hospital(int hospid, String hospitalname, String address, String locality, String email, String password,
+			String contact, String ambulancecontact, int ventilator, int oxygen, int normal, int a_pos, int a_neg,
+			int b_pos, int b_neg, int ab_pos, int ab_neg, int o_pos, int o_neg, int oxygenavailable,
+			List<Doctorinfo> doctorinfos, List<Request> requests) {
 		super();
 		this.hospid = hospid;
 		this.hospitalname = hospitalname;
 		this.address = address;
+		this.locality = locality;
 		this.email = email;
 		this.password = password;
 		this.contact = contact;
@@ -82,7 +84,11 @@ public class Hospital implements Serializable{
 		this.o_pos = o_pos;
 		this.o_neg = o_neg;
 		this.oxygenavailable = oxygenavailable;
+		this.doctorinfos = doctorinfos;
+		this.requests = requests;
 	}
+
+
 
 	public int getHospid() {
 		return hospid;
@@ -251,6 +257,19 @@ public class Hospital implements Serializable{
 	public void setRequests(List<Request> requests) {
 		this.requests = requests;
 	}
+
+
+
+	public String getLocality() {
+		return locality;
+	}
+
+
+
+	public void setLocality(String locality) {
+		this.locality = locality;
+	}
+	
 	
 	
 }

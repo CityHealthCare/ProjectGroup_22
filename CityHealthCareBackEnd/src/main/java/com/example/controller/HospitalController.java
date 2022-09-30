@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.entity.Doctorinfo;
 import com.example.entity.Hospital;
 import com.example.entity.HospitalServices;
+import com.example.repository.HospitalRepository;
 import com.example.service.DoctorinfoServiceInft;
 import com.example.service.HospitalServiceIntf;
 
@@ -75,6 +77,11 @@ public class HospitalController {
 		return hospitalService.getHospitalById(hospid);
 	}
 
+	@GetMapping("/hosplocality/{locaity}")
+	private List<Hospital> getHospitalbylocality(@PathVariable String locaity) {
+		System.out.println(locaity);
+		return hospitalService.getHospitalBylocality(locaity);
+	}
 	@GetMapping("/doctorinfo/{hospid}")
 	private List<Doctorinfo> getAllDoctorinfo(@PathVariable int hospid) {
 		return doctorinfoService.getAllDoctorinfos(hospid);
@@ -95,5 +102,12 @@ public class HospitalController {
 		hospitalServiceIntf.saveHospitalServices(saveHospitalService);
 		return new ResponseEntity<String>(" Services Added Successfully in " + " this HospitalID", HttpStatus.OK);
 	}
-
+	
+	
+	
+	@DeleteMapping("/deleteHospital/{id}")
+	private ResponseEntity<String> deleteHospital(@PathVariable int id) {
+		hospitalService.deleteHospital(id);
+		return new ResponseEntity<String>(" Hospital Deleted Successfully", HttpStatus.OK);
+	}
 }

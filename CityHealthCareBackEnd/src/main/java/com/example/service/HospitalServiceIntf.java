@@ -33,6 +33,10 @@ public interface HospitalServiceIntf {
 
 	HospitalServices getHospitalServicesByHospitalID(int gethid);
 
+	void deleteHospital(int id);
+
+	List<Hospital> getHospitalBylocality(String locaity);
+
 	
 	
 }
