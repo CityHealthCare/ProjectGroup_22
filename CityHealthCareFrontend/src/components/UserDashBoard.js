@@ -51,6 +51,9 @@ class UserDashBoard extends Component {
   appointmentlist() {
     window.location = "/bookingappointmentstatus";
   }
+  hospitalavailability() {
+    window.location = "/hospitalavailability";
+  }
   render() {
     let { userId, Name } = this.state;
     return (
@@ -77,7 +80,7 @@ class UserDashBoard extends Component {
               <div className="card-body">
                 <h5 className="card-title">Book Bed</h5>
                 <p className="card-text">
-                  View Blood Availability in the Hospital
+                  View Bed Availability in the Hospital
                 </p>
                 <Button onClick={this.bedbook} className="btn btn-success">
                   Book Now
@@ -92,12 +95,12 @@ class UserDashBoard extends Component {
               style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
             >
               <div className="card-body">
-                <h5 className="card-title">View Blood Availability</h5>
+                <h5 className="card-title">View Hospitals</h5>
                 <p className="card-text">
-                  View Blood Availability in the Hospital
+                  View Hospitals Availability in Your Locality
                 </p>
                 <Button
-                  onClick={this.bloodavailability}
+                  onClick={this.hospitalavailability}
                   className="btn btn-primary"
                 >
                   VIEW
@@ -201,7 +204,25 @@ class UserDashBoard extends Component {
               </div>
             </div>
           </div>
-         
+          <div className="col-sm-4">
+            <div
+              className="card"
+              style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">View Blood Availability</h5>
+                <p className="card-text">
+                  View Blood Availability in the Hospital
+                </p>
+                <Button
+                  onClick={this.bloodavailability}
+                  className="btn btn-primary"
+                >
+                  VIEW
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

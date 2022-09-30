@@ -21,7 +21,7 @@ import Bedavailability from "./components/Bedavailability";
 import Bloodavailability from "./components/Bloodavailability";
 import Oxygenavailability from "./components/Oxygenavailability";
 import Bookingstatus from "./components/Bookingstatus";
-
+import Hospitalavailability from "./components/Hospitalavailability";
 import BookingAppointmentStatus from "./components/BookingAppointmentStatus";
 import DoctorInfo from "./components/DoctorInfo";
 import AmbulanceContact from "./components/AmbulanceContact";
@@ -101,6 +101,12 @@ function App() {
           exact
           path="/oxygenavailability"
           element={<Oxygenavailability />}
+        ></Route>
+
+<Route
+          exact
+          path="/hospitalavailability"
+          element={<Hospitalavailability />}
         ></Route>
         <Route exact path="/bookingstatus" element={<Bookingstatus />}></Route>
         <Route exact path="/bookingappointmentstatus" element={<BookingAppointmentStatus />}></Route>
