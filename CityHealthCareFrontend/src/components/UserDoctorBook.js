@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
-import { Calendar } from 'rsuite';
-import DatePicker from 'react-datepicker';  
+
 import RequestServiceApi from "../service/RequestServiceApi.js";
-import "react-datepicker/dist/react-datepicker.css";  
+
 var i = 0;
 var j = 0;
 export default class Userbedbook extends Component {

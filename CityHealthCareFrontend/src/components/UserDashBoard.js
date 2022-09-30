@@ -48,6 +48,9 @@ class UserDashBoard extends Component {
   doctorinfo() {
     window.location = "/doctorinfo";
   }
+  appointmentlist() {
+    window.location = "/bookingappointmentstatus";
+  }
   render() {
     let { userId, Name } = this.state;
     return (
@@ -178,6 +181,27 @@ class UserDashBoard extends Component {
               </div>
             </div>
           </div>
+          
+
+        </div>
+        <div className="row my-3 justify-content-center">
+          <div className="col-sm-4">
+            <div
+              className="card"
+              style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
+            >
+               <div className="card-body">
+                <h5 className="card-title">View Appointments Details</h5>
+                <p className="card-text">
+                  View appointments in Hospital
+                </p>
+                <Button onClick={this.appointmentlist} className="btn btn-primary">
+                  VIEW
+                </Button>
+              </div>
+            </div>
+          </div>
+         
         </div>
       </div>
     );
