@@ -1,14 +1,17 @@
 package com.example.service;
 
 import java.util.List;
+
+
 import com.example.entity.Doctorinfo;
 import com.example.entity.Hospital;
+import com.example.entity.HospitalServices;
 
 public interface HospitalServiceIntf {
 	
 	Hospital savehospital(Hospital hosp);
 	
-	Hospital getHospitalById(int id);
+	Hospital getHospitalById(int hospital);
 	
 	List<Hospital> getAllHospital();
 		
@@ -25,6 +28,11 @@ public interface HospitalServiceIntf {
 	Hospital getOxygenByHospitalname(String hosname);
 	
 	Doctorinfo savedoctorinfo(Doctorinfo doctorinfo, int id);
+	
+	void saveHospitalServices(HospitalServices saveHospitalServices);
+
+	HospitalServices getHospitalServicesByHospitalID(int gethid);
+
 	
 	
 }
