@@ -50,10 +50,9 @@ public class HospitalServiceImpl implements HospitalServiceIntf {
 
 	public Doctorinfo savedoctorinfo(Doctorinfo d, int id) {
 		Hospital hos = hospitalRepository.findById(id).get();
-
-		Doctorinfo info = new Doctorinfo(d.getName(), d.getEmail(), d.getQualification(), d.getSpecialization(),
-				d.getFees(), hos);
-
+		
+		Doctorinfo info = new Doctorinfo(d.getName(), d.getEmail(), d.getQualification(), d.getSpecialization(), d.getTimeslotAM(),d.getTimeslotPM(),d.getFees(),hos);
+		
 		return doctorinfoRepository.save(info);
 	}
 
