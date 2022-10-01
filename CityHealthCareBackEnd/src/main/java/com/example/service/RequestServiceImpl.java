@@ -86,6 +86,7 @@ public class RequestServiceImpl implements RequestServiceIntf{
 	public Request saveRequest(Request req, int hid, int uid) {
 		Hospital hos = hospitalRepository.findById(hid).get();
 		User user = userRepository.findById(uid).get();
+		System.out.println(req.getDate());
 		Request request = new Request(req.getBedtype(),req.getSymptoms(),req.getDate(),req.getStatus(),hos,user);
 		
 		return requestRepository.save(request);

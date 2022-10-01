@@ -102,7 +102,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="a_pos"
                   className="form-control"
                   placeholder="A_pos"
@@ -119,7 +119,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="a_neg"
                   className="form-control"
                   placeholder="A_Neg"
@@ -136,7 +136,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="b_pos"
                   className="form-control"
                   placeholder="B_pos"
@@ -153,7 +153,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                   type="number"
+                   type="text"
                   id="b_neg"
                   className="form-control"
                   placeholder="B_Neg"
@@ -170,7 +170,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="ab_pos"
                   className="form-control"
                   placeholder="AB_pos"
@@ -187,7 +187,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="ab_neg"
                   className="form-control"
                   placeholder="AB_Neg"
@@ -204,7 +204,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="o_pos"
                   className="form-control"
                   placeholder="O_pos"
@@ -221,7 +221,7 @@ class AddBlood extends Component {
               </label>
               <div className="col-5">
                 <input
-                  type="number"
+                  type="text"
                   id="o_neg"
                   className="form-control"
                   placeholder="O_Neg"

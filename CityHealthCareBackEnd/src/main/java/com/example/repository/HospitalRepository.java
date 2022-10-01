@@ -25,7 +25,7 @@ public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 	
 	@Modifying
 	@Query("update Hospital h set h.a_pos=:a_pos, h.a_neg=:a_neg, h.b_pos=:b_pos,h.b_neg=:b_neg,h.ab_pos=:ab_pos,h.ab_neg=:ab_neg,h.o_pos=:o_pos,h.o_neg=:o_neg where hospid=:id")
-	int updateblood(int id,int a_pos,int a_neg,int b_pos,int b_neg,int ab_pos,int ab_neg,int o_pos,int o_neg );
+	int updateblood(int id,String a_pos,String a_neg,String b_pos,String b_neg,String ab_pos,String ab_neg,String o_pos,String o_neg );
 	
 	@Modifying
 	@Query("update Hospital h set h.oxygenavailable=:oxygenavailable where hospid=:id")
