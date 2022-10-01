@@ -42,8 +42,8 @@ export default class Userbedbook extends Component {
 
   saveRequest = (e) => {
     if (
-      this.state.PatientName === "" ||
-      this.state.symptoms === "" 
+      this.state.patientName === "" ||
+      this.state.symptom === "" 
       
     ) {
       Swal.fire({
@@ -127,7 +127,7 @@ export default class Userbedbook extends Component {
                 type="text"
                 id="symptom"
                 className="form-control"
-                placeholder="Symptoms"
+                placeholder="Symptom"
                 name="symptom"
                 value={this.state.symptom}
                 onChange={this.onChange}

@@ -55,11 +55,11 @@ class HospitalDashboard extends Component {
   doctorinfolist() {
     window.location = "/doctorinfolist";
   }
-  viewrequest() {
-    window.location = "/viewrequest";
+  viewappointmentrequest() {
+    window.location = "/viewappointmentrequest";
   }
-  approverejectequest() {
-    window.location = "/approverejectrequest";
+  approverejectappointment() {
+    window.location = "/approverejectappointment";
   }
 
 
@@ -268,7 +268,7 @@ class HospitalDashboard extends Component {
           </div>
         </div>
 
-        <div className="row mt-3 mb-5 justify-content-center">
+        <div className="row my-3 mb-5 justify-content-center">
           <div className="col-sm-4">
             <div
               className="card"
@@ -301,6 +301,42 @@ class HospitalDashboard extends Component {
             </div>
           </div>
         </div>
+
+        <div className="row my-3 mb-5 justify-content-center">
+          <div className="col-sm-4">
+            <div
+              className="card"
+              style={{ backgroundColor: "rgba(255,255,255,0.6)" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">Action on Appointments</h5>
+                <p className="card-text">Approve or Reject the Appointments.</p>
+                <Button
+                  className="btn btn-primary"
+                  onClick={this.approverejectappointment}
+                >
+                  View
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div
+              className="card"
+              style={{ backgroundColor: "rgba(255,255,255,0.6)" }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">View Appointments</h5>
+                <p className="card-text">View Appointments details of Patients.</p>
+                <Button className="btn btn-primary" onClick={this.viewappointmentrequest}>
+                  View
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
       </div>
     );
   }

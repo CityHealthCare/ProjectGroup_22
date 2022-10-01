@@ -34,8 +34,9 @@ import BloodList from "./components/BloodList";
 import OxygenList from "./components/OxygenList";
 import DoctorInfoList from "./components/DoctorInfoList";
 import ApproveRejectRequest from "./components/ApproveRejectRequest";
+import ApproveRejectAppointment from "./components/ApproveRejectAppointment";
 import ViewRequest from "./components/ViewRequest";
-
+import ViewAppointmentRequest from "./components/ViewAppointmentRequest";
 import { Route, Routes } from "react-router";
 
 function App() {
@@ -79,8 +80,13 @@ function App() {
           path="/approverejectrequest"
           element={<ApproveRejectRequest />}
         ></Route>
+         <Route
+          exact
+          path="/approverejectappointment"
+          element={<ApproveRejectAppointment />}
+        ></Route>
         <Route exact path="/viewrequest" element={<ViewRequest />}></Route>
-
+        <Route exact path="/viewappointmentrequest" element={<ViewAppointmentRequest />}></Route>
         <Route exact path="/userdashboard" element={<UserDashBoard />}></Route>
         <Route exact path="/userbedbook" element={<Userbedbook />}></Route>
 

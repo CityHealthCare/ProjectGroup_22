@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
+import RequestServiceApi from "../service/RequestServiceApi.js";
 import AppointmentServiceApi from "../service/AppointmentServiceApi.js";
 
-export default class BookingAppointmentStatus extends Component {
+export default class ViewAppointmentRequest extends Component {
   constructor(props) {
     super(props);
 
@@ -11,21 +12,18 @@ export default class BookingAppointmentStatus extends Component {
       message: null,
     };
 
-    this.reloadHospitalList = this.reloadHospitalList.bind(this);
+    this.reloadRequestList = this.reloadRequestList.bind(this);
   }
 
   componentDidMount() {
-    this.reloadHospitalList();
+    this.reloadRequestList();
   }
 
-  reloadHospitalList() {
-    let u = JSON.parse(sessionStorage.getItem("user"));
-    console.log(u);
+  reloadRequestList() {
+    let hosp = JSON.parse(sessionStorage.getItem("hospital"));
+    console.log(hosp);
     AppointmentServiceApi.getAllAppointment().then((resp) => {
-      console.log(resp.data);
-
       this.setState({
-        
         requests: resp.data,
         message: "Request list rendered successfully",
       });
@@ -35,9 +33,8 @@ export default class BookingAppointmentStatus extends Component {
   }
 
   backtodash() {
-    window.location = "/userdashboard";
+    window.location = "/hospitaldashboard";
   }
-
   render() {
     return (
       <>
