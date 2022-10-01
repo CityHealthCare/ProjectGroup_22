@@ -19,8 +19,8 @@ public class GmailService
 	 private static final Logger logger=LogManager.getLogger(GmailService.class);
 	 
 	public void send(String email,String pass) {
-      String from="Cityhealthcare22@gmail.com";
-      String password="aztdkwtvwacaizde";
+      String from="akshinde331@gmail.com";
+      String password="pvqwyefgbxckqupn";
       String  to=email; 
       System.out.println(email);
       System.out.println(pass);

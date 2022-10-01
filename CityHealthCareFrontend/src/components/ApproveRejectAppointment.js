@@ -34,38 +34,21 @@ export default class ApproveRejectAppointment extends Component {
   }
 
   acceptRequest(reqid) {
-    console.log(reqid);
-    console.log(typeof reqid);
-
-    RequestServiceApi.acceptrejectPendingRequest("accepted", reqid).then(
-      (res) => {
-        this.setState({ message: "Request Accepted successfully." });
-        console.log(this.state.message);
         Swal.fire({
-          title: this.state.message,
+          title: "Your Request Accepted",
           icon: "success",
           confirmButtonText: "Ok",
         });
-        window.location = "/hospitaldashboard";
-      }
-    );
   }
 
   rejectRequest(reqid) {
-    console.log(reqid);
+    Swal.fire({
+      title: "Your Request Rejected",
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
 
-    RequestServiceApi.acceptrejectPendingRequest("rejected", reqid).then(
-      (res) => {
-        this.setState({ message: "Request Rejected successfully." });
-        console.log(this.state.message);
-        Swal.fire({
-          title: this.state.message,
-          icon: "success",
-          confirmButtonText: "Ok",
-        });
-        window.location = "/hospitaldashboard";
-      }
-    );
+   
   }
 
   backtodash() {

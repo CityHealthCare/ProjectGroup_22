@@ -1,5 +1,8 @@
 package com.example.service;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,6 +48,7 @@ public class DoctorAppointmentImpl implements DoctorAppointmentIntf {
 
 	@Override
 	public List<DoctorsAppointment> allAppointment() {
+		List<DoctorsAppointment> d1=appointmentRepository.findAll();
 		
 		return appointmentRepository.findAll();
 	}

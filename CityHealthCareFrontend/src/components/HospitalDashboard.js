@@ -58,10 +58,15 @@ class HospitalDashboard extends Component {
   viewappointmentrequest() {
     window.location = "/viewappointmentrequest";
   }
+  viewrequest() {
+    window.location = "/viewrequest";
+  }
   approverejectappointment() {
     window.location = "/approverejectappointment";
   }
-
+  approverejectrequest() {
+    window.location = "/approverejectrequest";
+  }
 
   viewservices() {
     window.location = "/viewservices";
@@ -279,7 +284,7 @@ class HospitalDashboard extends Component {
                 <p className="card-text">Approve or Reject the Requests.</p>
                 <Button
                   className="btn btn-primary"
-                  onClick={this.approverejectequest}
+                  onClick={this.approverejectrequest}
                 >
                   View
                 </Button>

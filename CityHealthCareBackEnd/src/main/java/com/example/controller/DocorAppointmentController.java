@@ -36,12 +36,13 @@ public class DocorAppointmentController {
 	
 	@GetMapping("/getappointmentbyid/{userid}")
 	private DoctorsAppointment getdoc(@PathVariable int userid) {
+
 		return doctorAppointmentIntf.getDoctorsAppointmentByID(userid);
 	}
 	
 	@PostMapping("/addapoointment/{userid}/{hospid}/{doctorid}")
 	private ResponseEntity<String> saveDoctorsAppointment(@RequestBody DoctorsAppointment saveDoctorsAppointment,@PathVariable int userid,@PathVariable int hospid,@PathVariable int doctorid) {
-		
+		saveDoctorsAppointment.setDate((saveDoctorsAppointment.getDate()).substring(0, 25));
 		System.out.println(userid);
 		System.out.println(hospid);
 		System.out.println(doctorid);
